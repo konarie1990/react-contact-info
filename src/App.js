@@ -8,7 +8,13 @@ import {
   ModalFooter,
   Table,
   UncontrolledAlert,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle
 } from "reactstrap";
 
 class App extends Component {
@@ -33,7 +39,7 @@ class App extends Component {
           <div className="jumbotron" className="p-3 mb-2 bg-dark text-white">
             <h1 className="display-3">Hello, world!</h1>
             <p className="lead">
-              This is a generic web form built using Bootstrap classes.
+              This is a generic web form built using Reactstrap.
             </p>
             <hr className="my-2" />
             <p>
@@ -113,7 +119,7 @@ class App extends Component {
             I love this form!
           </label>
         </div>
-
+        <div className="spacer" />
         <div className="form-check mb-2 mr-sm-2">
           <input
             className="form-check-input"
@@ -210,6 +216,28 @@ class App extends Component {
           >
             Look! I'm using Reactstrap!!!
           </UncontrolledTooltip>
+        </div>
+
+        <div>
+          <Card>
+            <CardImg
+              top
+              width="100%"
+              src="https://secure.i.telegraph.co.uk/multimedia/archive/02830/cat_2830677b.jpg"
+              alt="Card image cap"
+            />
+            <CardBody>
+              <CardTitle>Kitten loves Reactstrap!</CardTitle>
+              <CardSubtitle>
+                It helps her rapidly protype and maintain a scalable front end.
+              </CardSubtitle>
+              <CardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </CardText>
+              <Button>Click to pet kitten</Button>
+            </CardBody>
+          </Card>
         </div>
       </div>
     );
