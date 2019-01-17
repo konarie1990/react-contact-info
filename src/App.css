@@ -30,3 +30,8 @@
 .modal-container .modal-backdrop {
   position: absolute;
 }
+
+.spacer {
+  width: 100%;
+  height: 10px;
+}

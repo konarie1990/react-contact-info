@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Table,
+  UncontrolledAlert,
+  UncontrolledTooltip
+} from "reactstrap";
 
 class App extends Component {
   constructor(props) {
@@ -20,24 +29,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ul className="nav nav-tabs">
-          <li className="nav-item">
-            <a className="nav-link active" href="#!">
-              Application
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#!">
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#!">
-              Contact
-            </a>
-          </li>
-        </ul>
-
         <header classNameName="App-header">
           <div className="jumbotron" className="p-3 mb-2 bg-dark text-white">
             <h1 className="display-3">Hello, world!</h1>
@@ -142,7 +133,7 @@ class App extends Component {
 
         <div>
           <Button onClick={this.toggle}>
-            {"HELLO"}
+            {"Modal Popup"}
             {this.props.buttonLabel}
           </Button>
           <Modal
@@ -150,15 +141,10 @@ class App extends Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+            <ModalHeader toggle={this.toggle}>Modal</ModalHeader>
             <ModalBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              This is a modal popup that can be useful to help the user focus on
+              a spefic element.
             </ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={this.toggle}>
@@ -169,27 +155,61 @@ class App extends Component {
               </Button>
             </ModalFooter>
           </Modal>
+        </div>
+        <div className="spacer" />
+        <UncontrolledAlert color="danger">
+          This is an alert and can be dismissed!
+        </UncontrolledAlert>
 
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenu1"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+        <Table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Table</td>
+              <td>Guy</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Lovestables</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>Database</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </Table>
+
+        <div>
+          <p>
+            What is this page? To find out, hover over the{" "}
+            <span
+              style={{ textDecoration: "underline", color: "blue" }}
+              href="#"
+              id="UncontrolledTooltipExample"
             >
-              Dropdown
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <a class="dropdown-item" href="#!">
-                Action
-              </a>
-              <a class="dropdown-item" href="#!">
-                Another action
-              </a>
-            </div>
-          </div>
+              tooltip
+            </span>
+            .
+          </p>
+          <UncontrolledTooltip
+            placement="right"
+            target="UncontrolledTooltipExample"
+          >
+            Look! I'm using Reactstrap!!!
+          </UncontrolledTooltip>
         </div>
       </div>
     );
