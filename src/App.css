@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  padding: 5%;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -22,11 +23,10 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-container {
+  position: relative;
+}
+.modal-container .modal,
+.modal-container .modal-backdrop {
+  position: absolute;
 }
